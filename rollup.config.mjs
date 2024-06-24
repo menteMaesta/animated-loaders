@@ -2,7 +2,6 @@ import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
-import { babel } from '@rollup/plugin-babel';
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -30,15 +29,11 @@ export default [
     plugins: [
       peerDepsExternal(),
       resolve({
-        extensions: ['.js', '.jsx'],
+        extensions: ['.ts', '.tsx'],
       }),
       commonjs(),
       terser(),
-      babel({
-        extensions: ['.js', '.jsx'],
-        exclude: 'node_modules/**',
-      }),
     ],
-    external: ['react', 'react-dom', '@emotion/react', '@emotion/styled'],
+    external: ['react', 'react-dom'],
   },
 ];
