@@ -1,0 +1,18 @@
+#left {
+  animation: sway 2s ease infinite alternate;
+  transform-origin: bottom right;
+}
+#center {
+  animation: sway 2s ease infinite alternate-reverse;
+  transform-origin: bottom;
+}
+#right {
+  animation: sway 3s ease infinite alternate;
+  transform-origin: bottom left;
+}
+
+#left,
+#center,
+#right {
+  transform-box: fill-box;
+}
