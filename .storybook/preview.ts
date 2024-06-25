@@ -1,9 +1,8 @@
-/** @type { import('@storybook/react').Preview } */
+import { Preview } from '@storybook/react';
+import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '../src/shared/main.css';
 
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
-
-const preview = {
+const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     controls: {
@@ -13,7 +12,6 @@ const preview = {
       },
     },
   },
-
   decorators: [
     withThemeByDataAttribute({
       themes: {
@@ -21,7 +19,6 @@ const preview = {
         dark: 'dark',
       },
       defaultTheme: 'light',
-      dataAttribute: 'data-theme',
     }),
   ],
 };
