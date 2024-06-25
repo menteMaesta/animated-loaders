@@ -31,6 +31,7 @@ const FlowerLoader = ({
         'w-full h-full ' +
         'flex flex-col ' +
         'items-center justify-center ' +
+        'dark:text-white ' +
         parentClassName
       }
     >
@@ -38,7 +39,7 @@ const FlowerLoader = ({
         viewBox='-0.1 -0.05 1.6 2.19'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={[className, sizeStyle[size]].join(' ')}
+        className={[className, size ? sizeStyle[size] : []].join(' ')}
         {...props}
       >
         <path
@@ -67,7 +68,10 @@ const FlowerLoader = ({
           className={'stroke-[0.0015rem]'}
         />
       </svg>
-      <p {...textRest} className={'text-center ' + textClassName}>
+      <p
+        {...textRest}
+        className={'text-center animate-pulse pt-1 ' + textClassName}
+      >
         {text}
       </p>
     </div>

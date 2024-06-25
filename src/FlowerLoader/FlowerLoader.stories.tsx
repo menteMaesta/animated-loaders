@@ -8,7 +8,7 @@ export default {
 
 export const Default = {
   render: () => (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen dark:bg-slate-700'>
       <FlowerLoader />
     </div>
   ),
@@ -16,7 +16,7 @@ export const Default = {
 
 export const Small = {
   render: () => (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen dark:bg-slate-700'>
       <FlowerLoader size='small' />
     </div>
   ),
@@ -24,7 +24,7 @@ export const Small = {
 
 export const Large = {
   render: () => (
-    <div className='w-full h-screen'>
+    <div className='w-full h-screen dark:bg-slate-700'>
       <FlowerLoader size='large' />
     </div>
   ),
