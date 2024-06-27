@@ -18,7 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "test-storybook": "test-storybook"
+    "test-storybook": "test-storybook",
+    "build-storybook-docs": "storybook build  --docs"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",

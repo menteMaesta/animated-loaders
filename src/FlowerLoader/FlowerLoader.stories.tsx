@@ -6,6 +6,13 @@ import FlowerLoader from './FlowerLoader';
 const meta: Meta<typeof FlowerLoader> = {
   title: 'FlowerLoader',
   component: FlowerLoader,
+  tags: ['autodocs'],
+  parameters: {
+    docs: {
+      subtitle:
+        'A flower-themed loading spinner with customizable text and size',
+    },
+  },
   argTypes: {
     className: { control: { type: 'text' } },
     size: {
@@ -18,12 +25,15 @@ const meta: Meta<typeof FlowerLoader> = {
 export default meta;
 type Story = StoryObj<typeof FlowerLoader>;
 
+/**
+ * This is how FlowerLoader component looks like out of the box, no custom size or text
+ */
 export const Default: Story = {
   args: {
     'data-testid': 'flower-loader',
   },
   render: ({ ...args }) => (
-    <div className='w-full h-screen dark:bg-slate-700'>
+    <div className='mt-8  py-8 w-full dark:bg-slate-700'>
       <FlowerLoader {...args} />
     </div>
   ),
@@ -54,15 +64,24 @@ export const Default: Story = {
   },
 };
 
+/**
+ * This is how FlowerLoader component looks like with custom size and text
+ */
 export const WitCustomClassNames: Story = {
   args: {
     'data-testid': 'flower-loader',
-    className: 'svg-custom-class',
+    className: 'svg-custom-class text-amber-500 dark:text-amber-600',
     parentProps: { className: 'parent-custom-class', 'data-testid': 'parent' },
-    textProps: { className: 'text-custom-class', 'data-testid': 'text' },
+    textProps: {
+      className:
+        'text-custom-class text-amber-600 dark:text-amber-600 dark:font-semibold text-xs',
+      'data-testid': 'text',
+    },
+    text: 'Preparing the images...',
+    size: 'small',
   },
   render: ({ ...args }) => (
-    <div className='w-full h-screen dark:bg-slate-700'>
+    <div className='mt-8 py-8 w-full dark:bg-slate-700'>
       <FlowerLoader {...args} />
     </div>
   ),
