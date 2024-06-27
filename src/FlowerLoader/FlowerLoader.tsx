@@ -4,8 +4,9 @@ import './FlowerLoader.css';
 interface FlowerLoaderProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';
   text?: string;
-  parentProps?: HTMLProps<HTMLDivElement>;
-  textProps?: HTMLProps<HTMLParagraphElement>;
+  parentProps?: HTMLProps<HTMLDivElement> & { 'data-testid'?: string };
+  textProps?: HTMLProps<HTMLParagraphElement> & { 'data-testid'?: string };
+  'data-testid'?: string;
 }
 
 const FlowerLoader = ({
