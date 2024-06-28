@@ -5,6 +5,8 @@ on:
       - 'main'
 jobs:
   test:
+    environment:
+      name: github-pages
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
