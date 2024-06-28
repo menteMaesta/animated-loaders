@@ -19,4 +19,4 @@ jobs:
       - name: Run Storybook tests
         run: yarn test-storybook
         env:
-          TARGET_URL: '${{ steps.build-publish.outputs.page_url }}'
+          TARGET_URL: '${{ env.STORYBOOK_URL }}'
