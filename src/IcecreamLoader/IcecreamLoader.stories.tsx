@@ -50,9 +50,9 @@ export const Default: Story = {
     ) as HTMLElement;
     const cone = canvasElement.querySelector('#cone') as HTMLElement;
 
-    const initialTopScoop = getComputedStyle(topScoop).transform;
-    const initialMiddleScoop = getComputedStyle(middleScoop).transform;
-    const initialBottomScoop = getComputedStyle(bottomScoop).transform;
+    const initialTopScoop = getComputedStyle(topScoop).opacity;
+    const initialMiddleScoop = getComputedStyle(middleScoop).opacity;
+    const initialBottomScoop = getComputedStyle(bottomScoop).opacity;
     const initialCone = getComputedStyle(cone).transform;
 
     await step('IcecreamLoader renders', async () => {
@@ -66,15 +66,52 @@ export const Default: Story = {
     });
 
     await step('IcecreamLoader animates', async () => {
-      await waitForTimeout(4 * 1000); //wait for 4 seconds for the animation to be in progress
-      expect(getComputedStyle(topScoop).transform).not.toEqual(initialTopScoop);
-      expect(getComputedStyle(middleScoop).transform).not.toEqual(
+      await waitForTimeout(1.5 * 1000); //wait for 1.5 seconds for the animation to be in progress
+      expect(getComputedStyle(topScoop).opacity).not.toEqual(initialTopScoop);
+      expect(getComputedStyle(middleScoop).opacity).not.toEqual(
         initialMiddleScoop,
       );
-      expect(getComputedStyle(bottomScoop).transform).not.toEqual(
+      expect(getComputedStyle(bottomScoop).opacity).not.toEqual(
         initialBottomScoop,
       );
-      expect(getComputedStyle(cone).transform).toEqual(initialCone);
+      await waitForTimeout(1.4 * 1000);
+      expect(getComputedStyle(cone).transform).not.toEqual(initialCone);
+    });
+  },
+};
+
+/**
+ * This is how IcecreamLoader component looks like with custom styles
+ */
+export const CustomStyle: Story = {
+  args: {
+    'data-testid': 'icecream-loader',
+    textProps: { 'data-testid': 'loader-text' },
+    coneClassName: 'fill-slate-500',
+    scoopFirstClassName: 'fill-slate-200',
+    scoopMiddleClassName: 'fill-slate-400',
+    scoopLastClassName: 'fill-slate-500',
+  },
+  render: ({ ...args }) => (
+    <div className='mt-8  py-8 w-full dark:bg-slate-700'>
+      <IcecreamLoader {...args} />
+    </div>
+  ),
+  play: async ({ canvasElement, step }) => {
+    const topScoop = canvasElement.querySelector('#scoop-first') as HTMLElement;
+    const middleScoop = canvasElement.querySelector(
+      '#scoop-middle',
+    ) as HTMLElement;
+    const bottomScoop = canvasElement.querySelector(
+      '#scoop-last',
+    ) as HTMLElement;
+    const cone = canvasElement.querySelector('#cone') as HTMLElement;
+
+    await step('IcecreamLoader applies custom styles', async () => {
+      expect(topScoop).toHaveClass('fill-slate-200');
+      expect(middleScoop).toHaveClass('fill-slate-400');
+      expect(bottomScoop).toHaveClass('fill-slate-500');
+      expect(cone).toHaveClass('fill-slate-500');
     });
   },
 };
