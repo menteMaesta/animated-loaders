@@ -1,6 +1,7 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
+import { waitForTimeout } from '../shared/helpers';
 import FlowerLoader from './FlowerLoader';
 
 const meta: Meta<typeof FlowerLoader> = {
@@ -38,10 +39,6 @@ export const Default: Story = {
     </div>
   ),
   play: async ({ canvasElement, step }) => {
-    // Function to wait for a specified time
-    const waitForTimeout = (ms: number) =>
-      new Promise((resolve) => setTimeout(resolve, ms));
-
     const { getByTestId, getByText } = within(canvasElement);
     const flowerLoader = getByTestId('flower-loader');
     const left = canvasElement.querySelector('#left') as HTMLElement;
