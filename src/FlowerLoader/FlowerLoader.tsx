@@ -1,20 +1,23 @@
-import React, { SVGProps, HTMLProps } from 'react';
+import React, { SVGProps } from 'react';
+import LoaderWrapper, {
+  LoaderWrapperProps,
+} from '../LoaderWrapper/LoaderWrapper';
 import './FlowerLoader.css';
 
 interface FlowerLoaderProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';
-  text?: string;
-  parentProps?: HTMLProps<HTMLDivElement> & { 'data-testid'?: string };
-  textProps?: HTMLProps<HTMLParagraphElement> & { 'data-testid'?: string };
   'data-testid'?: string;
+  text?: LoaderWrapperProps['text'];
+  textProps?: LoaderWrapperProps['textProps'];
+  parentProps?: Omit<LoaderWrapperProps, 'text' | 'textProps'>;
 }
 
 const FlowerLoader = ({
   className,
-  size = 'default',
-  text = 'Loading...',
-  parentProps,
+  text,
   textProps,
+  parentProps,
+  size = 'default',
   ...props
 }: FlowerLoaderProps) => {
   const sizeStyle = {
@@ -22,20 +25,9 @@ const FlowerLoader = ({
     default: 'w-24',
     large: 'w-32',
   };
-  const { className: parentClassName, ...parentRest } = parentProps || {};
-  const { className: textClassName, ...textRest } = textProps || {};
 
   return (
-    <div
-      {...parentRest}
-      className={
-        'w-full h-full ' +
-        'flex flex-col ' +
-        'items-center justify-center ' +
-        'dark:text-white ' +
-        parentClassName
-      }
-    >
+    <LoaderWrapper text={text} textProps={textProps} {...parentProps}>
       <svg
         viewBox='-0.1 -0.05 1.6 2.19'
         fill='none'
@@ -69,13 +61,7 @@ const FlowerLoader = ({
           className={'stroke-[0.0015rem]'}
         />
       </svg>
-      <p
-        {...textRest}
-        className={'text-center animate-pulse pt-1 ' + textClassName}
-      >
-        {text}
-      </p>
-    </div>
+    </LoaderWrapper>
   );
 };
 export default FlowerLoader;
