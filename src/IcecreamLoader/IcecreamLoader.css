@@ -1,0 +1,80 @@
+#scoop-first {
+  animation: 6s ease drop-first infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#scoop-middle {
+  animation: 6s ease drop-middle infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+#scoop-last {
+  animation: 6s ease drop-last infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+#cone {
+  animation: 6s ease spin infinite;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes drop-first {
+  0% {
+    transform: translateY(-0.24rem);
+  }
+  20%,
+  85% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes drop-middle {
+  0%,
+  30% {
+    transform: translateY(-0.2rem);
+  }
+  45%,
+  75% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+  85%,
+  100% {
+    opacity: 0;
+  }
+}
+@keyframes drop-last {
+  0%,
+  40% {
+    transform: translateY(-0.16rem);
+  }
+  55%,
+  65% {
+    transform: translateY(0rem);
+    opacity: 1;
+  }
+  75%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes spin {
+  0%,
+  90% {
+    transform: rotate(0deg);
+  }
+  98% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
