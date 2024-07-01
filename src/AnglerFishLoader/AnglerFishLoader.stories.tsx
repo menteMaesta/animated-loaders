@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import AnglerFishLoader from './AnglerFishLoader';
 
@@ -31,5 +30,5 @@ export const Default: Story = {
       <AnglerFishLoader {...args} />
     </div>
   ),
-  play: async ({ canvasElement, step }) => {},
+  play: async ({}) => {},
 };

@@ -1,7 +1,9 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
 import terser from '@rollup/plugin-terser';
+import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
+import postcss from 'rollup-plugin-postcss';
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -33,6 +35,10 @@ export default [
       }),
       commonjs(),
       terser(),
+      typescript(),
+      postcss({
+        extensions: ['.css'],
+      }),
     ],
     external: ['react', 'react-dom'],
   },
