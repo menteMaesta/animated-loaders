@@ -1,7 +1,7 @@
 {
-  "name": "learnstorybook-design-system-template",
+  "name": "animated-loaders",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "files": [
@@ -72,5 +72,8 @@
   },
   "resolutions": {
     "jackspeak": "2.1.1"
-  }
+  },
+  "description": "A collection of svg animated icons that can be wrapped into a loader",
+  "repository": "https://github.com/menteMaesta/animated-loaders",
+  "author": "menteMaesta <paulagomenr@gmail.com>"
 }
