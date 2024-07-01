@@ -11,5 +11,9 @@ const config: StorybookConfig = {
     name: '@storybook/react-vite',
     options: {},
   },
+  managerHead: (head) => `
+    ${head}
+    <meta name="description" content="Library of animated svg icons for use in loaders or any other thing :^)" key="desc" />
+  `,
 };
 export default config;
