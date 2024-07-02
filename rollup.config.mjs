@@ -4,6 +4,7 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import { dts } from 'rollup-plugin-dts';
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -24,7 +25,7 @@ export default [
       {
         file: packageJson.module,
         format: 'esm',
-        exports: 'named',
+        // exports: 'named',
         sourcemap: true,
       },
     ],
@@ -41,5 +42,11 @@ export default [
       }),
     ],
     external: ['react', 'react-dom'],
+  },
+  {
+    input: 'dist/cjs/index.d.ts',
+    output: [{ file: 'dist/cjs/index.d.ts', format: 'es' }],
+    plugins: [dts()],
+    external: [/\.css$/],
   },
 ];
