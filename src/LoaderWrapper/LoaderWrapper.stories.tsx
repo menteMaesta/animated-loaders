@@ -1,3 +1,4 @@
+import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
 import LoaderWrapper from './LoaderWrapper';

@@ -1,4 +1,4 @@
-import { ComponentPropsWithoutRef } from 'react';
+import React, { ComponentPropsWithoutRef } from 'react';
 
 export interface LoaderWrapperProps extends ComponentPropsWithoutRef<'div'> {
   text?: string;
