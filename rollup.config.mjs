@@ -39,6 +39,7 @@ export default [
       typescript(),
       postcss({
         extensions: ['.css'],
+        plugins: [require('tailwindcss'), require('autoprefixer')],
       }),
     ],
     external: ['react', 'react-dom'],
