@@ -6,13 +6,12 @@ on:
   push:
     branches: [main]
 
-permissions:
-  contents: write
-
 # what the action will do
 jobs:
   release:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     if: ${{!contains(github.event.head_commit.message, 'ci skip') && !contains(github.event.head_commit.message, 'skip ci')}}
     steps:
       - uses: actions/checkout@v4
