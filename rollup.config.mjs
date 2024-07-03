@@ -4,6 +4,9 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
+import tailwindcss from 'tailwindcss';
+import autoprefixer from 'autoprefixer';
+import postcssImport from 'postcss-import';
 import { dts } from 'rollup-plugin-dts';
 
 // This is required to read package.json file when
@@ -38,7 +41,7 @@ export default [
       typescript(),
       postcss({
         extensions: ['.css'],
-        plugins: [require('tailwindcss'), require('autoprefixer')],
+        plugins: [tailwindcss(), autoprefixer(), postcssImport()],
       }),
     ],
     external: ['react', 'react-dom'],
