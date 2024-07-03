@@ -78,6 +78,6 @@
     "jackspeak": "2.1.1"
   },
   "description": "A collection of svg animated icons that can be wrapped into a loader",
-  "repository": "https://github.com/menteMaesta/animated-loaders",
+  "repository": "git@github.com:menteMaesta/animated-loaders.git",
   "author": "menteMaesta <paulagomenr@gmail.com>"
 }
