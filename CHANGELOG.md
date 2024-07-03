@@ -1,3 +1,15 @@
+# v0.1.9 (Wed Jul 03 2024)
+
+#### 🐛 Bug Fix
+
+- Update job permissions inside actions [#8](https://github.com/menteMaesta/animated-loaders/pull/8) ([@menteMaesta](https://github.com/menteMaesta))
+
+#### Authors: 1
+
+- Paula Gomez ([@menteMaesta](https://github.com/menteMaesta))
+
+---
+
 # v0.1.8 (Wed Jul 03 2024)
 
 #### 🐛 Bug Fix
