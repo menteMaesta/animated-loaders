@@ -13,14 +13,16 @@ const LoaderWrapper = ({
   className,
   ...props
 }: LoaderWrapperProps) => {
-  const { className: textClassName, ...textRest } = textProps || {};
+  const { className: textClassName, ...textRest } = textProps || {
+    className: '',
+  };
+
   return (
     <div
       className={
         'w-full h-full ' +
         'flex flex-col ' +
         'items-center justify-center ' +
-        'dark:text-white ' +
         className
       }
       {...props}
@@ -28,7 +30,7 @@ const LoaderWrapper = ({
       {children}
       <p
         {...textRest}
-        className={'text-center animate-pulse pt-1 ' + textClassName}
+        className={'text-center animate-pulse pt-1 m-0 ' + textClassName}
       >
         {text}
       </p>

@@ -28,14 +28,13 @@ export const Default: Story = {
     'data-testid': 'loader-wrapper',
     className: 'parent-custom-class',
     textProps: {
-      className:
-        'text-custom-class text-amber-600 dark:text-amber-600 dark:font-semibold text-xs',
+      className: 'text-custom-class',
       'data-testid': 'text',
     },
     text: 'Preparing the images...',
   },
   render: ({ ...args }) => (
-    <div className='mt-8 py-8 w-full dark:bg-slate-700'>
+    <div className='mt-8 py-8 w-full'>
       <LoaderWrapper {...args}>children</LoaderWrapper>
     </div>
   ),

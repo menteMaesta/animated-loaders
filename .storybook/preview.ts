@@ -1,5 +1,4 @@
 import { Preview } from '@storybook/react';
-import { withThemeByDataAttribute } from '@storybook/addon-themes';
 import '../src/shared/main.css';
 
 const preview: Preview = {
@@ -12,15 +11,7 @@ const preview: Preview = {
       },
     },
   },
-  decorators: [
-    withThemeByDataAttribute({
-      themes: {
-        light: '',
-        dark: 'dark',
-      },
-      defaultTheme: 'light',
-    }),
-  ],
+  decorators: [],
 };
 
 export default preview;

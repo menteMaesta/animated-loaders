@@ -28,14 +28,11 @@ const AnglerFishSvg = ({
   return (
     <LoaderWrapper text={text} textProps={textProps} {...parentProps}>
       <svg
-        viewBox='0 -0.06 1.5 1.25'
+        id='angler-fish'
+        viewBox='-0.01 -0.06 1.5 1.25'
         fill='none'
         xmlns='http://www.w3.org/2000/svg'
-        className={[
-          className,
-          'stroke-[0.0015rem] bounce',
-          size ? sizeStyle[size] : [],
-        ].join(' ')}
+        className={[className, size ? sizeStyle[size] : []].join(' ')}
         {...props}
       >
         <path

@@ -27,7 +27,7 @@ type Story = StoryObj<typeof AnglerFishSvg>;
  */
 export const Default: Story = {
   render: ({ ...args }) => (
-    <div className='mt-8  py-8 w-full dark:bg-slate-700'>
+    <div className='mt-8 py-8 w-full'>
       <AnglerFishSvg {...args} />
     </div>
   ),
