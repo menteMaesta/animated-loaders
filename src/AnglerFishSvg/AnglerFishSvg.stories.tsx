@@ -1,10 +1,10 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import AnglerFishLoader from './AnglerFishLoader';
+import AnglerFishSvg from './AnglerFishSvg';
 
-const meta: Meta<typeof AnglerFishLoader> = {
-  title: 'AnglerFishLoader',
-  component: AnglerFishLoader,
+const meta: Meta<typeof AnglerFishSvg> = {
+  title: 'AnglerFishSvg',
+  component: AnglerFishSvg,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -20,15 +20,15 @@ const meta: Meta<typeof AnglerFishLoader> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof AnglerFishLoader>;
+type Story = StoryObj<typeof AnglerFishSvg>;
 
 /**
- * This is how AnglerFishLoader component looks like out of the box, no custom size or text
+ * This is how AnglerFishSvg component looks like out of the box, no custom size or text
  */
 export const Default: Story = {
   render: ({ ...args }) => (
     <div className='mt-8  py-8 w-full dark:bg-slate-700'>
-      <AnglerFishLoader {...args} />
+      <AnglerFishSvg {...args} />
     </div>
   ),
   play: async ({}) => {},

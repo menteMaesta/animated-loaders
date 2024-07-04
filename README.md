@@ -1,54 +1,64 @@
 # Animated loaders
 
-A bunch of animated svg icons and a wrapper that converts them to loaders for loading screens
+A collection of React components featuring animated SVG icons. Designed to be easily integrated and customized. [You can visit the storybook catalog](https://mentemaesta.github.io/animated-loaders/)
 
-## 🚅 Quick start
+> ⚠️ It currently uses svg path changes animations which are only supported by chromium browsers
 
-1.  **Clone the repository.**
+## 🚀 Quick start
 
-    Use [github clone](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository#cloning-a-repository) to get this repository.
+### Installation
 
-    ```shell
-    # Clone the template
-    git clone git@github.com:menteMaesta/animated-loaders.git
-    ```
+```bash
+npm install animated-loaders
+# or
+yarn add animated-loaders
+```
 
-1.  **Install the dependencies.**
+### Usage
 
-    Navigate into your new site’s directory and install the necessary dependencies.
+```jsx
+import { AnglerFishSvg, LoaderWrapper } from 'animated-loaders';
 
-    ```shell
-    # Navigate to the directory
-    cd animated-loaders/
+function App() {
+  return (
+    <LoaderWrapper>
+      <AnglerFishSvg />
+    </LoaderWrapper>
+  );
+}
+```
 
-    # Install the dependencies
-    yarn
-    ```
+For more examples and customization options, see [the docs section in this storybook demo](https://mentemaesta.github.io/animated-loaders/).
+
+## 📚 Stack
+
+Here's a breakdown of the key technologies and tools used:
+
+- **React**: Powers the UI components.
+- **Rollup**: Bundles the code efficiently.
+- **TypeScript**: Adds type safety and enhances developer experience.
+- **Storybook**: Facilitates UI component development and testing.
+- **SVG and Path Animations**: Enables high-quality animations. Note: Path animations are optimized for Chromium browsers.
+- **PostCSS**: Processes CSS for styling components.
 
 ## 🔎 What's inside?
 
-A quick look at the top-level files and directories included with this template.
+A quick look at the top-level files and directories:
 
-    .
-    ├── src
-      ├──AnglerFishLoader
-      ├──FlowerLoader
-      ├──LoaderWrapper
-      ├──shared
-      index.js
+```
+.
+├── src
+│   ├── AnglerFishSvg
+│   ├── FlowerSvg
+│   ├── LoaderWrapper
+│   └── shared
+└── index.js
+```
 
-2.  **`src`**: This directory will contain all of the animated svg icons and the loader wrapper.
+## 🤝 Contributing
 
-3.  **`AnglerFishLoader`**: This directory contains the anglerfish animated icon.
+If you encounter an issue with the animated icons, please open an issue in this repository.
 
-4.  **`FlowerLoader`**: This directory contains the Flower animated icon.
+## 📄 License
 
-5.  **`LoaderWrapper`**: This directory contains the component that converts the animated icons into page loaders.
-
-6.  **`shared`**: This directory houses animations, tailwind imports and functions used across all components.
-
-7.  **`index.js`**: This file exports all components.
-
-## Contribute
-
-If you encounter an issue with the animated icons, we encourage you to open an issue in this repository.
+This project is licensed under the MIT License - see the [`LICENSE`](https://github.com/menteMaesta/animated-loaders/blob/main/LICENSE) file for details.
