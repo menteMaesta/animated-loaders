@@ -1,3 +1,6 @@
+#flower {
+  stroke-width: 0.002rem;
+}
 #left {
   animation: sway 2s ease infinite alternate;
   transform-origin: bottom right;
@@ -9,6 +12,9 @@
 #right {
   animation: sway 3s ease infinite alternate;
   transform-origin: bottom left;
+}
+#vase {
+  stroke-width: 0.0015rem;
 }
 
 #left,

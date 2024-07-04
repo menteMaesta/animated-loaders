@@ -34,7 +34,7 @@ export const Default: Story = {
     'data-testid': 'flower-loader',
   },
   render: ({ ...args }) => (
-    <div className='mt-8  py-8 w-full dark:bg-slate-700'>
+    <div className='mt-8 py-8 w-full'>
       <FlowerSvg {...args} />
     </div>
   ),
@@ -67,18 +67,17 @@ export const Default: Story = {
 export const WitCustomClassNames: Story = {
   args: {
     'data-testid': 'flower-loader',
-    className: 'svg-custom-class text-amber-500 dark:text-amber-600',
+    className: 'svg-custom-class',
     parentProps: { className: 'parent-custom-class', 'data-testid': 'parent' },
     textProps: {
-      className:
-        'text-custom-class text-amber-600 dark:text-amber-600 dark:font-semibold text-xs',
+      className: 'text-custom-class',
       'data-testid': 'text',
     },
     text: 'Preparing the images...',
     size: 'small',
   },
   render: ({ ...args }) => (
-    <div className='mt-8 py-8 w-full dark:bg-slate-700'>
+    <div className='mt-8 py-8 w-full'>
       <FlowerSvg {...args} />
     </div>
   ),
