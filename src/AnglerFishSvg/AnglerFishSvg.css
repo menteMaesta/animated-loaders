@@ -1,7 +1,8 @@
 #lamp {
   animation: 3s ease lamp-move infinite;
 }
-.bounce {
+#angler-fish {
+  stroke-width: 0.0015rem;
   animation: 2s ease-out bounce infinite;
 }
 
