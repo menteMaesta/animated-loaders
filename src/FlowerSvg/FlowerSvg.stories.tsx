@@ -1,8 +1,8 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
-import { waitForTimeout } from '../shared/helpers';
-import FlowerSvg from './FlowerSvg';
+import { waitForTimeout } from 'shared/helpers.ts';
+import FlowerSvg from 'src/FlowerSvg/FlowerSvg.tsx';
 
 const meta: Meta<typeof FlowerSvg> = {
   title: 'FlowerSvg',

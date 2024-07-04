@@ -1,8 +1,8 @@
 import React, { SVGProps } from 'react';
 import LoaderWrapper, {
   LoaderWrapperProps,
-} from '../LoaderWrapper/LoaderWrapper';
-import './AnglerFishSvg.css';
+} from 'src/LoaderWrapper/LoaderWrapper.tsx';
+import 'src/AnglerFishSvg/AnglerFishSvg.css';
 
 interface AnglerFishSvgProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';

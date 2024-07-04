@@ -1,8 +1,8 @@
 import React, { SVGProps } from 'react';
 import LoaderWrapper, {
   LoaderWrapperProps,
-} from '../LoaderWrapper/LoaderWrapper';
-import './FlowerSvg.css';
+} from 'src/LoaderWrapper/LoaderWrapper.tsx';
+import 'src/FlowerSvg/FlowerSvg.css';
 
 interface FlowerSvgProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';

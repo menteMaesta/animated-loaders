@@ -7,6 +7,8 @@ import postcss from 'rollup-plugin-postcss';
 import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import { dts } from 'rollup-plugin-dts';
+import alias from '@rollup/plugin-alias';
+import path from 'node:path';
 
 // This is required to read package.json file when
 // using Native ES modules in Node.js
@@ -32,6 +34,15 @@ export default [
     ],
     plugins: [
       peerDepsExternal(),
+      alias({
+        entries: [
+          { find: 'src', replacement: path.resolve('./src') },
+          {
+            find: 'shared',
+            replacement: path.resolve('./src/shared'),
+          },
+        ],
+      }),
       resolve({
         extensions: ['.ts', '.tsx'],
       }),
@@ -40,7 +51,21 @@ export default [
       typescript(),
       postcss({
         extensions: ['.css'],
-        plugins: [autoprefixer(), postcssImport()],
+        plugins: [
+          autoprefixer(),
+          postcssImport({
+            resolve: (id) => {
+              const [aliasName, filename] = id.split('/');
+              const aliasMapping = {
+                src: (filename) => path.resolve(__dirname, `src/${filename}`),
+                shared: (filename) =>
+                  path.resolve(__dirname, `src/shared/${filename}`),
+              };
+
+              return aliasMapping[aliasName](filename);
+            },
+          }),
+        ],
       }),
     ],
     external: ['react', 'react-dom'],
@@ -48,7 +73,18 @@ export default [
   {
     input: 'dist/cjs/index.d.ts',
     output: [{ file: 'dist/cjs/index.d.ts', format: 'es' }],
-    plugins: [dts()],
+    plugins: [
+      alias({
+        entries: [
+          { find: 'src', replacement: path.resolve('./dist/cjs') },
+          {
+            find: 'shared',
+            replacement: path.resolve('./dist/cjs/shared'),
+          },
+        ],
+      }),
+      dts(),
+    ],
     external: [/\.css$/],
   },
 ];

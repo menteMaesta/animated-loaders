@@ -1,4 +1,4 @@
-@import './animations.css';
+@import 'shared/animations.css';
 
 body {
   font-family: system-ui;
