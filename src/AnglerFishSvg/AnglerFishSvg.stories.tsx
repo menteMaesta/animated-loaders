@@ -1,6 +1,6 @@
 import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
-import AnglerFishSvg from './AnglerFishSvg';
+import AnglerFishSvg from 'src/AnglerFishSvg/AnglerFishSvg.tsx';
 
 const meta: Meta<typeof AnglerFishSvg> = {
   title: 'AnglerFishSvg',
