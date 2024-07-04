@@ -3,7 +3,7 @@ import LoaderWrapper, {
 } from './LoaderWrapper/LoaderWrapper';
 import FlowerSvg from './FlowerSvg/FlowerSvg';
 import AnglerFishSvg from './AnglerFishSvg/AnglerFishSvg';
-import './shared/animations.css';
+import './shared/main.css';
 
 export { LoaderWrapper, FlowerSvg, AnglerFishSvg };
 export type { LoaderWrapperProps };
