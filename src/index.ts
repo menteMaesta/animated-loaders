@@ -1,9 +1,9 @@
 import LoaderWrapper, {
   LoaderWrapperProps,
 } from './LoaderWrapper/LoaderWrapper';
-import FlowerLoader from './FlowerLoader/FlowerLoader';
-import AnglerFishLoader from './AnglerFishLoader/AnglerFishLoader';
+import FlowerSvg from './FlowerSvg/FlowerSvg';
+import AnglerFishSvg from './AnglerFishSvg/AnglerFishSvg';
 import './shared/main.css';
 
-export { LoaderWrapper, FlowerLoader, AnglerFishLoader };
+export { LoaderWrapper, FlowerSvg, AnglerFishSvg };
 export type { LoaderWrapperProps };

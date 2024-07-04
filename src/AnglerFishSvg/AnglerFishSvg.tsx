@@ -2,9 +2,9 @@ import React, { SVGProps } from 'react';
 import LoaderWrapper, {
   LoaderWrapperProps,
 } from '../LoaderWrapper/LoaderWrapper';
-import './AnglerFishLoader.css';
+import './AnglerFishSvg.css';
 
-interface AnglerFishLoaderProps extends SVGProps<SVGSVGElement> {
+interface AnglerFishSvgProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';
   'data-testid'?: string;
   text?: LoaderWrapperProps['text'];
@@ -12,14 +12,14 @@ interface AnglerFishLoaderProps extends SVGProps<SVGSVGElement> {
   parentProps?: Omit<LoaderWrapperProps, 'text' | 'textProps'>;
 }
 
-const AnglerFishLoader = ({
+const AnglerFishSvg = ({
   className,
   text,
   textProps,
   parentProps,
   size = 'default',
   ...props
-}: AnglerFishLoaderProps) => {
+}: AnglerFishSvgProps) => {
   const sizeStyle = {
     small: 'w-20',
     default: 'w-32',
@@ -53,4 +53,4 @@ const AnglerFishLoader = ({
     </LoaderWrapper>
   );
 };
-export default AnglerFishLoader;
+export default AnglerFishSvg;

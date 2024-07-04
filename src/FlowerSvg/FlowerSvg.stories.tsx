@@ -2,11 +2,11 @@ import React from 'react';
 import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
 import { waitForTimeout } from '../shared/helpers';
-import FlowerLoader from './FlowerLoader';
+import FlowerSvg from './FlowerSvg';
 
-const meta: Meta<typeof FlowerLoader> = {
-  title: 'FlowerLoader',
-  component: FlowerLoader,
+const meta: Meta<typeof FlowerSvg> = {
+  title: 'FlowerSvg',
+  component: FlowerSvg,
   tags: ['autodocs'],
   parameters: {
     docs: {
@@ -24,10 +24,10 @@ const meta: Meta<typeof FlowerLoader> = {
   },
 };
 export default meta;
-type Story = StoryObj<typeof FlowerLoader>;
+type Story = StoryObj<typeof FlowerSvg>;
 
 /**
- * This is how FlowerLoader component looks like out of the box, no custom size or text
+ * This is how FlowerSvg component looks like out of the box, no custom size or text
  */
 export const Default: Story = {
   args: {
@@ -35,12 +35,12 @@ export const Default: Story = {
   },
   render: ({ ...args }) => (
     <div className='mt-8  py-8 w-full dark:bg-slate-700'>
-      <FlowerLoader {...args} />
+      <FlowerSvg {...args} />
     </div>
   ),
   play: async ({ canvasElement, step }) => {
     const { getByTestId, getByText } = within(canvasElement);
-    const flowerLoader = getByTestId('flower-loader');
+    const flowerSvg = getByTestId('flower-loader');
     const left = canvasElement.querySelector('#left') as HTMLElement;
     const center = canvasElement.querySelector('#center') as HTMLElement;
     const right = canvasElement.querySelector('#right') as HTMLElement;
@@ -48,12 +48,12 @@ export const Default: Story = {
     const initialCenter = getComputedStyle(center).transform;
     const initialRight = getComputedStyle(right).transform;
 
-    await step('FlowerLoader renders', async () => {
-      expect(flowerLoader).toBeInTheDocument();
+    await step('FlowerSvg renders', async () => {
+      expect(flowerSvg).toBeInTheDocument();
       expect(getByText('Loading...')).toBeInTheDocument();
     });
     await waitForTimeout(2 * 1000); //wait for 2 seconds for the animation to complete
-    await step('FlowerLoader animation completes', async () => {
+    await step('FlowerSvg animation completes', async () => {
       expect(getComputedStyle(left).transform).not.toEqual(initialLeft);
       expect(getComputedStyle(center).transform).not.toEqual(initialCenter);
       expect(getComputedStyle(right).transform).not.toEqual(initialRight);
@@ -62,7 +62,7 @@ export const Default: Story = {
 };
 
 /**
- * This is how FlowerLoader component looks like with custom size and text
+ * This is how FlowerSvg component looks like with custom size and text
  */
 export const WitCustomClassNames: Story = {
   args: {
@@ -79,17 +79,17 @@ export const WitCustomClassNames: Story = {
   },
   render: ({ ...args }) => (
     <div className='mt-8 py-8 w-full dark:bg-slate-700'>
-      <FlowerLoader {...args} />
+      <FlowerSvg {...args} />
     </div>
   ),
   play: async ({ canvasElement, step }) => {
     const { getByTestId } = within(canvasElement);
-    const flowerLoader = getByTestId('flower-loader');
+    const flowerSvg = getByTestId('flower-loader');
     const parent = getByTestId('parent');
     const text = getByTestId('text');
 
-    step('FlowerLoader renders with custom class names', async () => {
-      expect(flowerLoader).toBeInTheDocument();
+    step('FlowerSvg renders with custom class names', async () => {
+      expect(flowerSvg).toBeInTheDocument();
       expect(parent).toHaveClass('parent-custom-class');
       expect(text).toHaveClass('text-custom-class');
     });

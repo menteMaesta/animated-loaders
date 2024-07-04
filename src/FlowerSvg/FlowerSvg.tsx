@@ -2,9 +2,9 @@ import React, { SVGProps } from 'react';
 import LoaderWrapper, {
   LoaderWrapperProps,
 } from '../LoaderWrapper/LoaderWrapper';
-import './FlowerLoader.css';
+import './FlowerSvg.css';
 
-interface FlowerLoaderProps extends SVGProps<SVGSVGElement> {
+interface FlowerSvgProps extends SVGProps<SVGSVGElement> {
   size?: 'small' | 'default' | 'large';
   'data-testid'?: string;
   text?: LoaderWrapperProps['text'];
@@ -12,14 +12,14 @@ interface FlowerLoaderProps extends SVGProps<SVGSVGElement> {
   parentProps?: Omit<LoaderWrapperProps, 'text' | 'textProps'>;
 }
 
-const FlowerLoader = ({
+const FlowerSvg = ({
   className,
   text,
   textProps,
   parentProps,
   size = 'default',
   ...props
-}: FlowerLoaderProps) => {
+}: FlowerSvgProps) => {
   const sizeStyle = {
     small: 'w-16',
     default: 'w-24',
@@ -64,4 +64,4 @@ const FlowerLoader = ({
     </LoaderWrapper>
   );
 };
-export default FlowerLoader;
+export default FlowerSvg;
