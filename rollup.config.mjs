@@ -4,7 +4,6 @@ import terser from '@rollup/plugin-terser';
 import typescript from '@rollup/plugin-typescript';
 import peerDepsExternal from 'rollup-plugin-peer-deps-external';
 import postcss from 'rollup-plugin-postcss';
-import tailwindcss from 'tailwindcss';
 import autoprefixer from 'autoprefixer';
 import postcssImport from 'postcss-import';
 import { dts } from 'rollup-plugin-dts';
@@ -41,7 +40,7 @@ export default [
       typescript(),
       postcss({
         extensions: ['.css'],
-        plugins: [tailwindcss(), autoprefixer(), postcssImport()],
+        plugins: [autoprefixer(), postcssImport()],
       }),
     ],
     external: ['react', 'react-dom'],

@@ -1,6 +1,6 @@
 import { Preview } from '@storybook/react';
 import { withThemeByDataAttribute } from '@storybook/addon-themes';
-import '../src/shared/main.css';
+import '../src/shared/animations.css';
 
 const preview: Preview = {
   parameters: {
