@@ -37,8 +37,6 @@ const BloDuckSvg = ({
       />
       <path
         id='mouth'
-        fill-rule='evenodd'
-        clip-rule='evenodd'
         d='M8.65479 9.88553C8.65479 9.88553 12.5471 2.66544 11.6608 9.69017C10.9832 9.01951 8.65479 9.88553 8.65479 9.88553Z'
         fill='#E8593A'
       />
