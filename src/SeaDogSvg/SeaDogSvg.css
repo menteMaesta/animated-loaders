@@ -1,0 +1,115 @@
+#sea-dog {
+  --animation-time: 3s;
+  stroke-width: 0.035rem;
+
+  #body {
+    animation: emerge var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+
+  #waves {
+    animation: wave-movement var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+
+  #wisker1 {
+    animation: wisker1 var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+  #wisker2 {
+    animation: wisker2 var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+  #wisker3 {
+    animation: wisker3 var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+  #wisker4 {
+    animation: wisker4 var(--animation-time) infinite ease-in-out;
+    transform-origin: center;
+  }
+
+  #eye {
+    animation: blink var(--animation-time) infinite ease-in-out;
+  }
+
+  #nose {
+    animation: elevate-nose var(--animation-time) infinite ease-in-out;
+  }
+}
+
+@keyframes emerge {
+  50%,
+  60% {
+    d: path(
+      'M2.19522 14.2997C2.3662 12.9207 3.86085 8.15707 4.58908 5.48841C5.04606 4.31115 5.59582 2.88218 6.86102 2.39762C8.53144 2.0019 9.30836 3.82047 10.1974 4.85739C12.3558 7.74993 13.5137 12.9052 13.638 14.6757C9.13272 13.877 8.66335 15.1699 2.19522 14.2997Z'
+    );
+  }
+}
+
+@keyframes wave-movement {
+  50%,
+  60% {
+    d: path(
+      'M15.8411 15.2844C13.6544 14.6751 13.0907 14.4343 10.3832 14.4451C8.25637 14.5923 7.36903 14.6463 4.69719 14.5815C3.01416 14.4634 1.85082 14.3823 0.188786 14.0098'
+    );
+  }
+}
+
+@keyframes wisker1 {
+  50%,
+  60% {
+    d: path('M7.12786 3.19965C7.45987 3.27175 8.16333 3.25774 8.43444 3.33063');
+  }
+}
+@keyframes wisker2 {
+  50%,
+  60% {
+    d: path('M6.93001 3.8537C7.49662 4.07324 8.10032 4.4372 8.51558 4.55432');
+  }
+}
+@keyframes wisker3 {
+  50%,
+  60% {
+    d: path('M5.83962 3.06708C5.27798 2.61919 4.71948 2.65895 3.97415 2.19745');
+  }
+}
+@keyframes wisker4 {
+  50%,
+  60% {
+    d: path('M5.41832 3.55886C4.5422 3.3857 4.12256 3.38984 3.36232 3.20435');
+  }
+}
+
+@keyframes blink {
+  0%,
+  15% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  50%,
+  60% {
+    d: path(
+      'M10.6266 7.72195C10.6266 8.30045 10.1577 8.76941 9.57917 8.76941C9.00068 8.76941 8.53172 8.30045 8.53172 7.72195C8.53172 7.14346 9.00068 6.6745 9.57917 6.6745C10.1577 6.6745 10.6266 7.14346 10.6266 7.72195Z'
+    );
+    opacity: 1;
+  }
+  82% {
+    opacity: 1;
+  }
+  87%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes elevate-nose {
+  50%,
+  60% {
+    d: path(
+      'M7.96889 2.22628C8.10713 2.42486 7.76665 2.65363 7.30323 2.8149C6.83981 2.97618 6.17068 3.09439 6.03244 2.8958C5.8942 2.69722 6.21363 2.19761 6.68872 2.05431C7.09401 1.93206 7.83065 2.0277 7.96889 2.22628Z'
+    );
+  }
+}

@@ -1,0 +1,14 @@
+.filledIcon {
+  #body {
+    fill: black;
+    stroke: none;
+  }
+  #eye {
+    fill: white;
+    stroke: none;
+  }
+  #wisker1,
+  #wisker2 {
+    stroke: white;
+  }
+}
