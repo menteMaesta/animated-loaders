@@ -6,6 +6,7 @@ import AnglerFishSvg from 'src/AnglerFishSvg/AnglerFishSvg.tsx';
 import CatTailSvg from 'src/CatTailSvg/CatTailSvg.tsx';
 import BloDuckSvg from 'src/BloDuckSvg/BloDuckSvg.tsx';
 import SeaDogSvg from 'src/SeaDogSvg/SeaDogSvg';
+import StarsSvg from 'src/StarsSvg/StarsSvg.tsx';
 import 'shared/main.css';
 
 export {
@@ -15,5 +16,6 @@ export {
   CatTailSvg,
   BloDuckSvg,
   SeaDogSvg,
+  StarsSvg,
 };
 export type { LoaderWrapperProps };

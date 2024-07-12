@@ -44,7 +44,32 @@ export const Default: Story = {
       <StarsSvg {...args} />
     </div>
   ),
-  play: async ({}) => {},
+  play: async ({ canvasElement, step }) => {
+    const { getByTestId } = within(canvasElement);
+    const stars = getByTestId('stars-icon');
+    const star1 = canvasElement.querySelector('#stars #star1') as HTMLElement;
+    const star2 = canvasElement.querySelector('#stars #star2') as HTMLElement;
+    const star3 = canvasElement.querySelector('#stars #star3') as HTMLElement;
+
+    const startStar1 = getComputedStyle(star1).d;
+    const startStar2 = getComputedStyle(star2).d;
+    const startStar3 = getComputedStyle(star3).d;
+
+    await step('StarsSvg renders correctly', () => {
+      expect(stars).toBeInTheDocument();
+      expect(star1).toBeInTheDocument();
+      expect(star2).toBeInTheDocument();
+      expect(star3).toBeInTheDocument();
+    });
+
+    await waitForTimeout(1000);
+
+    await step('StarsSvg animates correctly', () => {
+      expect(getComputedStyle(star1).d).not.toEqual(startStar1);
+      expect(getComputedStyle(star2).d).not.toEqual(startStar2);
+      expect(getComputedStyle(star3).d).not.toEqual(startStar3);
+    });
+  },
 };
 
 /**
