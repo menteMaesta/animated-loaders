@@ -81,7 +81,6 @@ export const WithLoader: Story = {
     textProps,
     parentProps,
     'data-testid': 'stars-svg',
-    className: 'filledIcon',
   },
   render: ({ text, textProps, parentProps, ...args }) => (
     <div className='mt-8 py-8 w-full justify-center flex'>
@@ -95,12 +94,12 @@ export const WithLoader: Story = {
     const loader = getByTestId(
       parentProps?.['data-testid'] || 'loader-wrapper',
     );
-    const seaDog = getByTestId('stars-svg');
+    const stars = getByTestId('stars-svg');
     const text = getByTestId(textProps?.['data-testid'] || 'text');
 
     await waitForTimeout(1000);
     expect(loader).toBeInTheDocument();
-    expect(seaDog).toBeInTheDocument();
+    expect(stars).toBeInTheDocument();
     expect(text).toBeInTheDocument();
   },
 };
