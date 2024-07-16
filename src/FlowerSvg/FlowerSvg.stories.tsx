@@ -3,8 +3,21 @@ import type { Meta, StoryObj } from '@storybook/react';
 import { within, expect } from '@storybook/test';
 import { waitForTimeout } from 'shared/helpers.ts';
 import FlowerSvg from 'src/FlowerSvg/FlowerSvg.tsx';
+import LoaderWrapper, {
+  LoaderWrapperProps,
+} from 'src/LoaderWrapper/LoaderWrapper.tsx';
+import * as LoaderWrapperStories from 'src/LoaderWrapper/LoaderWrapper.stories.tsx';
 
-const meta: Meta<typeof FlowerSvg> = {
+type FlowerSvgPropsAndLoader = React.ComponentProps<typeof FlowerSvg> & {
+  text?: string;
+  textProps?: LoaderWrapperProps['textProps'];
+  parentProps?: Omit<LoaderWrapperProps, 'text' | 'textProps'>;
+};
+
+const { text, textProps, ...parentProps } =
+  LoaderWrapperStories.Default.args || {};
+
+const meta: Meta<FlowerSvgPropsAndLoader> = {
   title: 'FlowerSvg',
   component: FlowerSvg,
   tags: ['autodocs'],
@@ -20,27 +33,26 @@ const meta: Meta<typeof FlowerSvg> = {
       options: ['small', 'default', 'large'],
       control: { type: 'select' },
     },
-    text: { control: { type: 'text' } },
   },
 };
 export default meta;
-type Story = StoryObj<typeof FlowerSvg>;
+type Story = StoryObj<FlowerSvgPropsAndLoader>;
 
 /**
- * This is how FlowerSvg component looks like out of the box, no custom size or text
+ * This is how FlowerSvg component looks like out of the box with default size
  */
 export const Default: Story = {
   args: {
-    'data-testid': 'flower-loader',
+    'data-testid': 'flowers',
   },
   render: ({ ...args }) => (
-    <div className='mt-8 py-8 w-full'>
+    <div className='mt-8 py-8 w-full flex justify-center'>
       <FlowerSvg {...args} />
     </div>
   ),
   play: async ({ canvasElement, step }) => {
-    const { getByTestId, getByText } = within(canvasElement);
-    const flowerSvg = getByTestId('flower-loader');
+    const { getByTestId } = within(canvasElement);
+    const flowerSvg = getByTestId('flowers');
     const left = canvasElement.querySelector('#left') as HTMLElement;
     const center = canvasElement.querySelector('#center') as HTMLElement;
     const right = canvasElement.querySelector('#right') as HTMLElement;
@@ -50,7 +62,9 @@ export const Default: Story = {
 
     await step('FlowerSvg renders', async () => {
       expect(flowerSvg).toBeInTheDocument();
-      expect(getByText('Loading...')).toBeInTheDocument();
+      expect(left).toBeInTheDocument();
+      expect(center).toBeInTheDocument();
+      expect(right).toBeInTheDocument();
     });
     await waitForTimeout(2 * 1000); //wait for 2 seconds for the animation to complete
     await step('FlowerSvg animation completes', async () => {
@@ -62,35 +76,36 @@ export const Default: Story = {
 };
 
 /**
- * This is how FlowerSvg component looks like with custom size and text
+ * This is how FlowerSvg component looks like inside the LoaderWrapper
  */
-export const WitCustomClassNames: Story = {
+export const WithLoader: Story = {
   args: {
-    'data-testid': 'flower-loader',
+    'data-testid': 'flowers',
     className: 'svg-custom-class',
-    parentProps: { className: 'parent-custom-class', 'data-testid': 'parent' },
-    textProps: {
-      className: 'text-custom-class',
-      'data-testid': 'text',
-    },
-    text: 'Preparing the images...',
+    parentProps,
+    textProps,
+    text,
     size: 'small',
   },
-  render: ({ ...args }) => (
+  render: ({ text, textProps, parentProps, ...args }) => (
     <div className='mt-8 py-8 w-full'>
-      <FlowerSvg {...args} />
+      <LoaderWrapper text={text} textProps={textProps} {...parentProps}>
+        <FlowerSvg {...args} />
+      </LoaderWrapper>
     </div>
   ),
   play: async ({ canvasElement, step }) => {
     const { getByTestId } = within(canvasElement);
-    const flowerSvg = getByTestId('flower-loader');
-    const parent = getByTestId('parent');
-    const text = getByTestId('text');
+    const loader = getByTestId(
+      parentProps?.['data-testid'] || 'loader-wrapper',
+    );
+    const flowers = getByTestId('flowers');
+    const text = getByTestId(textProps?.['data-testid'] || 'text');
 
-    step('FlowerSvg renders with custom class names', async () => {
-      expect(flowerSvg).toBeInTheDocument();
-      expect(parent).toHaveClass('parent-custom-class');
-      expect(text).toHaveClass('text-custom-class');
+    await step('LoaderWrapper renders with CatTailSvg inside', async () => {
+      expect(loader).toBeInTheDocument();
+      expect(flowers).toBeInTheDocument();
+      expect(text).toBeInTheDocument();
     });
   },
 };
