@@ -1,16 +1,8 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/FlowerSvg/FlowerSvg.css';
 
-interface FlowerSvgProps extends SVGProps<SVGSVGElement> {
-  size?: 'small' | 'default' | 'large';
-  'data-testid'?: string;
-}
-
-const FlowerSvg = ({
-  className,
-  size = 'default',
-  ...props
-}: FlowerSvgProps) => {
+const FlowerSvg = ({ className, size = 'default', ...props }: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-12',
     default: 'w-16',

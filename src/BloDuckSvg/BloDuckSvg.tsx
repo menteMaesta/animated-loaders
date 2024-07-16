@@ -1,15 +1,12 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/BloDuckSvg/BloDuckSvg.css';
 
-interface BloDuckSvgProps extends SVGProps<SVGSVGElement> {
-  size?: 'small' | 'default' | 'large';
-  'data-testid'?: string;
-}
 const BloDuckSvg = ({
   className,
   size = 'default',
   ...props
-}: BloDuckSvgProps) => {
+}: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-12',
     default: 'w-16',
