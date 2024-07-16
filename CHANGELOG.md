@@ -1,3 +1,33 @@
+# v0.1.10 (Tue Jul 16 2024)
+
+#### 🐛 Bug Fix
+
+- Exclude stories from build [#20](https://github.com/menteMaesta/animated-loaders/pull/20) ([@menteMaesta](https://github.com/menteMaesta))
+- All icons [#19](https://github.com/menteMaesta/animated-loaders/pull/19) ([@menteMaesta](https://github.com/menteMaesta))
+- Flower loader separation (#18) [ci skip] [#18](https://github.com/menteMaesta/animated-loaders/pull/18) ([@menteMaesta](https://github.com/menteMaesta))
+- Ghost cat [#17](https://github.com/menteMaesta/animated-loaders/pull/17) ([@menteMaesta](https://github.com/menteMaesta))
+- Stars icon [#16](https://github.com/menteMaesta/animated-loaders/pull/16) ([@menteMaesta](https://github.com/menteMaesta))
+- Seadog icon [#15](https://github.com/menteMaesta/animated-loaders/pull/15) ([@menteMaesta](https://github.com/menteMaesta))
+- Created blob duck icon [#14](https://github.com/menteMaesta/animated-loaders/pull/14) ([@menteMaesta](https://github.com/menteMaesta))
+- Separate icon from loader [#13](https://github.com/menteMaesta/animated-loaders/pull/13) ([@menteMaesta](https://github.com/menteMaesta))
+- Created cat tail icon [#12](https://github.com/menteMaesta/animated-loaders/pull/12) ([@menteMaesta](https://github.com/menteMaesta))
+- Relative links [#11](https://github.com/menteMaesta/animated-loaders/pull/11) ([@menteMaesta](https://github.com/menteMaesta))
+- Rename icon components and update readme [ci skip] [#9](https://github.com/menteMaesta/animated-loaders/pull/9) ([@menteMaesta](https://github.com/menteMaesta))
+
+#### 🏎 Performance
+
+- Remove tailwind [#10](https://github.com/menteMaesta/animated-loaders/pull/10) ([@menteMaesta](https://github.com/menteMaesta))
+
+#### 📝 Documentation
+
+- Update readme to reflect new components [#21](https://github.com/menteMaesta/animated-loaders/pull/21) ([@menteMaesta](https://github.com/menteMaesta))
+
+#### Authors: 1
+
+- Paula Gomez ([@menteMaesta](https://github.com/menteMaesta))
+
+---
+
 # v0.1.9 (Wed Jul 03 2024)
 
 #### 🐛 Bug Fix
