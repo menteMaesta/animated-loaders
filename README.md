@@ -2,7 +2,7 @@
 
 A collection of React components featuring animated SVG icons. Designed to be easily integrated and customized. [You can visit the storybook catalog](https://mentemaesta.github.io/animated-loaders/)
 
-> ⚠️ It currently uses svg path changes animations which are only supported by chromium browsers
+> ⚠️ It uses svg path changes animations which are only supported by chromium based browsers
 
 ## 🚀 Quick start
 
@@ -48,9 +48,14 @@ A quick look at the top-level files and directories:
 ```
 .
 ├── src
+│   ├── All
 │   ├── AnglerFishSvg
+│   ├── BloDuckSvg
+│   ├── CatTailSvg
 │   ├── FlowerSvg
+│   ├── GhostCatSvg
 │   ├── LoaderWrapper
+│   ├── SeaDogSvg
 │   └── shared
 └── index.js
 ```
