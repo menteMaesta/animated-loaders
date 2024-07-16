@@ -19,6 +19,10 @@ const meta: Meta<SvgIconProps> = {
   },
   argTypes: {
     className: { control: { type: 'text' } },
+    size: {
+      options: ['small', 'default', 'large'],
+      control: { type: 'select' },
+    },
   },
 };
 export default meta;
@@ -28,7 +32,6 @@ type Story = StoryObj<SvgIconProps>;
  * Showcase of all icons with their names for easy identification
  */
 export const Default: Story = {
-  args: {},
   render: ({ ...args }) => (
     <div
       style={{
