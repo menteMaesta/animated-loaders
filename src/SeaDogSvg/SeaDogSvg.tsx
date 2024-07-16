@@ -1,17 +1,8 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/SeaDogSvg/SeaDogSvg.css';
 
-interface SeaDogSvgProps extends SVGProps<SVGSVGElement> {
-  className?: string;
-  'data-testid'?: string;
-  size?: 'small' | 'default' | 'large';
-}
-
-const SeaDogSvg = ({
-  className,
-  size = 'default',
-  ...props
-}: SeaDogSvgProps) => {
+const SeaDogSvg = ({ className, size = 'default', ...props }: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-12',
     default: 'w-16',

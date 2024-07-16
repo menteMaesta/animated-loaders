@@ -1,17 +1,12 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/GhostCatSvg/GhostCatSvg.css';
-
-interface GhostCatSvgProps extends SVGProps<SVGSVGElement> {
-  className?: string;
-  'data-testid'?: string;
-  size?: 'small' | 'default' | 'large';
-}
 
 const GhostCatSvg = ({
   className,
   size = 'default',
   ...props
-}: GhostCatSvgProps) => {
+}: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-16',
     default: 'w-20',

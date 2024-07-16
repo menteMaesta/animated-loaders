@@ -1,16 +1,12 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/AnglerFishSvg/AnglerFishSvg.css';
-
-interface AnglerFishSvgProps extends SVGProps<SVGSVGElement> {
-  size?: 'small' | 'default' | 'large';
-  'data-testid'?: string;
-}
 
 const AnglerFishSvg = ({
   className,
   size = 'default',
   ...props
-}: AnglerFishSvgProps) => {
+}: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-20',
     default: 'w-32',

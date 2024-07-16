@@ -1,16 +1,12 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/CatTailSvg/CatTailSvg.css';
-
-interface CatTailSvgProps extends SVGProps<SVGSVGElement> {
-  size?: 'small' | 'default' | 'large';
-  'data-testid'?: string;
-}
 
 const CatTailSvg = ({
   className,
   size = 'default',
   ...props
-}: CatTailSvgProps) => {
+}: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-12',
     default: 'w-16',

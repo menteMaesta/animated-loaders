@@ -1,13 +1,8 @@
-import React, { SVGProps } from 'react';
+import React from 'react';
+import { SvgIconProps } from 'shared/helpers';
 import 'src/StarsSvg/StarsSvg.css';
 
-interface StarsSvgProps extends SVGProps<SVGSVGElement> {
-  className?: string;
-  'data-testid'?: string;
-  size?: 'small' | 'default' | 'large';
-}
-
-const StarsSvg = ({ className, size = 'default', ...props }: StarsSvgProps) => {
+const StarsSvg = ({ className, size = 'default', ...props }: SvgIconProps) => {
   const sizeStyle = {
     small: 'w-12',
     default: 'w-16',

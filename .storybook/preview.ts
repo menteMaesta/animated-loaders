@@ -1,5 +1,5 @@
 import { Preview } from '@storybook/react';
-import '../src/shared/main.css';
+import 'src/shared/main.css';
 
 const preview: Preview = {
   parameters: {
@@ -8,6 +8,11 @@ const preview: Preview = {
       matchers: {
         color: /(background|color)$/i,
         date: /Date$/,
+      },
+    },
+    options: {
+      storySort: {
+        order: ['All Icons', '*'],
       },
     },
   },
