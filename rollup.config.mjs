@@ -48,7 +48,14 @@ export default [
       }),
       commonjs(),
       terser(),
-      typescript(),
+      typescript({
+        exclude: [
+          'node_modules',
+          'dist',
+          '**/*.stories.tsx',
+          'src/shared/stories.css',
+        ],
+      }),
       postcss({
         extensions: ['.css'],
         plugins: [
